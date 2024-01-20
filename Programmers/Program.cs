@@ -1,4 +1,6 @@
-﻿namespace Programmers
+﻿using System.Globalization;
+
+namespace Programmers
 {
     internal class Program
     {
@@ -221,9 +223,310 @@
 
                 return numbers;
             }
+            // 삼각형의 완성조건(1)
+            public int solution21(int[] sides)
+            {
+                int answer = 0;
+                int b = 0;
+                foreach (int a in sides)
+                {
+                    b += a;
+                }
+                int max = sides.Max();
+                b = b - max;
+                if (b > max)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+
+                return answer;
+            }
+            // 피자 나눠 먹기(1)
+            public int solution22(int n)
+            {
+                int answer = 0;
+                if (n % 7 == 0)
+                {
+                    answer = n / 7;
+                }
+                else
+                {
+                    answer = (n / 7) + 1;
+                }
+
+                return answer;
+            }
+            // 머쓱이보다 키 큰 사람
+            public int solution23(int[] array, int height)
+            {
+                int answer = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] > height)
+                    {
+                        answer++;
+                    }
+                }
+                return answer;
+            }
+            // 배열 자르기
+            public int[] solution24(int[] numbers, int num1, int num2)
+            {
+                int aaa = 0;
+                int[] answer = new int[num2 - num1 + 1];
 
 
 
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                   
+                    if (num1 <= i && num2 >= i)
+                    {
+
+                      
+                        answer[aaa++] = numbers[i];
+
+                    }
+                }
+
+                return answer;
+            }
+            // 중복된 숫자 개수
+            public int solution25(int[] array, int n)
+            {
+                int answer = 0;
+                foreach (int i in array)
+                {
+                    if (i == n)
+                    {
+                        answer++;
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+                return answer;
+            }
+            // 피자 나눠 먹기 (3)
+            public int solution26(int slice, int n)
+            {
+                return (n + (slice - 1)) / slice;
+            }
+            // 옷가게 할인 받기
+            public int solution27(int price)
+            {
+                if (price < 300000 && price >= 100000)
+                {
+                    price = (int)(price * 0.95f);
+                }
+                else if (price < 500000 && price >= 300000)
+                {
+                    price = (int)(price * 0.9f);
+                }
+                else if (price >= 500000)
+                {
+                    price = (int)(price * 0.8f);
+                }
+
+                int answer = price;
+                return answer;
+
+
+
+            }
+            // 중앙값 구하기
+            public int solution28(int[] array)
+            {
+                int answer = 0;
+                Array.Sort(array);
+
+                answer = array[array.Length / 2];
+
+                return answer;
+            }
+            // 점의 위치 구하기
+            public int solution29(int[] dot)
+            {
+                int xPos = dot[0];
+                int yPos = dot[1];
+                int answer = 0;
+                if (xPos > 0 && yPos > 0)
+                {
+                    answer = 1;
+                }
+                else if (xPos < 0 && yPos > 0)
+                {
+                    answer = 2;
+                }
+                else if (xPos < 0 && yPos < 0)
+                {
+                    answer = 3;
+                }
+                else if (xPos > 0 && yPos < 0)
+                {
+                    answer = 4;
+                }
+
+
+                return answer;
+            }
+            // 최댓값 만들기(1)
+            public int solution30(int[] numbers)
+            {
+                int answer = 0;
+                Array.Sort(numbers);
+                int a = numbers[numbers.Length - 1];
+                int b = numbers[numbers.Length - 2];
+
+                return answer = a * b;
+            }
+            // 세균 증식
+            public int solution31(int n, int t)
+            {
+                int answer = 0;
+                int a = 2;
+                for (int i = 0; i < t; i++)
+                {
+                    n *= a;
+                }
+                return answer = n;
+            }
+            // 짝수는 싫어요
+            public int[] solution32(int n)
+            {
+                int b = 0;
+                if (n % 2 == 0)
+                {
+                    b = n / 2;
+                }
+                else
+                {
+                    b = (n / 2) + 1;
+                }
+                int[] answer = new int[b];
+                int a = 0;
+                for (int i = 1; i <= n; i++)
+                {
+                    if (i % 2 != 0)
+                    {
+                        answer[a++] = i;
+                    }
+                }
+                return answer;
+            }
+            // 문자 반복 출력하기
+            public string solution33(string my_string, int n)
+            {
+                string answer = "";
+                foreach (char a in my_string)
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        answer += a;
+                    }
+
+                }
+
+                return answer;
+            }
+            // 제곱수 판별하기
+            public int solution34(int n)
+            {
+                int answer = 0;
+                int a = 0;
+
+                for (int i = 0; i < n; i++)
+                {
+                    a = i * i;
+                    if (n == a)
+                    {
+                        return 1;
+                    }
+                }
+                return 2;
+            }
+            // 개미 군단
+            public int solution35(int hp)
+            {
+                int answer = 0;
+                int atk = 0;
+                for (int i = 0; i < hp; i++)
+                {
+                    if (hp >= atk + 5)
+                    {
+                        atk += 5;
+                        answer++;
+                    }
+                    else if (hp >= atk + 3)
+                    {
+                        atk += 3;
+                        answer++;
+                    }
+                    else if (hp >= atk + 1)
+                    {
+                        atk += 1;
+                        answer++;
+                    }
+                    else
+                    {
+                        return answer;
+                    }
+                }
+                return answer;
+            }
+            // 가위 바위 보
+            public string solution36(string rsp)
+            {
+                string answer = "";
+                char c;
+                foreach (char a in rsp)
+                {
+                    if (a == '2')
+                    {
+                        c = '0';
+                        answer += c;
+                    }
+                    else if (a == '0')
+                    {
+                        c = '5';
+                        answer += c;
+                    }
+                    else
+                    {
+                        c = '2';
+                        answer += c;
+                    }
+                }
+                return answer;
+            }
+            // 대문자와 소문자
+            public string solution(string my_string)
+            {
+                string answer = "";
+                char c;
+                foreach (char a in my_string)
+                {
+                    c = a;
+                    c = char.ToUpper(a);
+                    if (c != a)
+                    {
+                        answer += c;
+                    }
+                    else
+                    {
+                        c = char.ToLower(a);
+                        answer += c;
+                    }
+                }
+                return answer;
+            }
 
 
 
@@ -231,16 +534,13 @@
 
         }
 
+        
 
 
-        public class Solution2
-        {
-            
-        }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           
         }
     }
 }
