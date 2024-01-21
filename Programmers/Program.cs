@@ -507,7 +507,7 @@ namespace Programmers
                 return answer;
             }
             // 대문자와 소문자
-            public string solution(string my_string)
+            public string solution37(string my_string)
             {
                 string answer = "";
                 char c;
@@ -527,7 +527,32 @@ namespace Programmers
                 }
                 return answer;
             }
+            // n의 배수 고르기
+            public int[] solution38(int n, int[] numlist)
+            {
 
+                int[] answer = numlist.Where(num => num % n == 0).ToArray();
+                return answer;
+
+            }
+            // 모음 제거
+            public string solution39(string my_string)
+            {
+                string answer = "";
+                int index = 0;
+                foreach (char a in my_string)
+                {
+                    if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u')
+                    {
+
+                    }
+                    else
+                    {
+                        answer += a;
+                    }
+                }
+                return answer;
+            }
 
 
 
