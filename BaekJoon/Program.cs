@@ -16,7 +16,7 @@
                 }
             }
 
-            // 병합 정렬을 이용하여 특별상을 받을 수 있는 의자 찾기
+           
             int specialChair = FindSpecialChair(chairNumbers, 0, 0, N - 1, N - 1);
 
             Console.WriteLine( specialChair);
