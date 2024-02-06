@@ -588,12 +588,41 @@ namespace Programmers
                 return Math.Max(max1 * max2, min1 * min2);
 
             }
-            // 가장 큰 수 찾기
-
-
+            // 문자열을 정수로 바꾸기     
+                public int solution41(string s)
+                {
+                    int answer = 0;
+                    answer = int.Parse(s);
+                    return answer;
+                }
+            // 나머지가 1이되는 수 찾기
+            public int solution42(int n)
+            {
+                int answer = 0;
+                for (int i = 1; i < n; i++)
+                {
+                    if (n % i == 1)
+                    {
+                        answer = i;
+                        return answer;
+                    }
+                }
+                return answer;
+            }
 
         }
-
+        // 평균 구하기
+        public double solution43(int[] arr)
+        {
+            double answer = 0;
+            double b = 0;
+            foreach (double a in arr)
+            {
+                b += a;
+            }
+            answer = b / arr.Length;
+            return answer;
+        }
 
 
 
